@@ -1,0 +1,26 @@
+# Application name
+spring:
+  application:
+    name: UserService
+
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/microservice # Replace with your database URL
+    username: postgres # Replace with your PostgreSQL username
+    password: 123 # Replace with your PostgreSQL password
+    hikari:
+      maximum-pool-size: 10
+      idle-timeout: 60000
+  jpa:
+    hibernate:
+      ddl-auto: update  # or 'create' or 'none'
+    show-sql: true  # Enable SQL logging in console
+    properties:
+      hibernate:
+        format_sql: true  # Format SQL queries
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+
+# Server configuration
+server:
+  port: 9091
