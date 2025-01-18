@@ -16,6 +16,7 @@ public class HotelController {
     private HotelService hotelService;
 
     //create
+    @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping
     public ResponseEntity<Hotel> createHotel(@RequestBody Hotel hotel)
     {
@@ -23,6 +24,7 @@ public class HotelController {
         return ResponseEntity.status(HttpStatus.CREATED).body(hotel1);
     }
     //get All hotel
+    @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping
     public ResponseEntity<List<Hotel>> getAllHotel()
     {
@@ -31,6 +33,7 @@ public class HotelController {
     }
 
     //get single hotel
+    @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/{hotel}")
     public ResponseEntity<Hotel> getHotel(@PathVariable String hotel)
     {
